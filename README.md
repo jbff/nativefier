@@ -1,3 +1,46 @@
+**Note:** Original Nativefier is unmaintained and has been publicly archived: https://github.com/nativefier/nativefier
+
+It was built a couple of years ago before the ability to [create shortcuts](https://support.google.com/chrome_webstore/answer/3060053?hl=en) for websites in Chrome, or [similarly](https://support.mozilla.org/en-US/kb/create-desktop-shortcut-website) on Firefox. Users who want to build and use their own website wrappers should strongly prefer these options as they are protected from security vulnerabilities by the browser's self updating mechanism.
+
+If you need to build a bespoke application for distribution, consider using Electron directly which offers much more flexibility.
+
+_Special thanks to [@ronjouch](https://github.com/ronjouch) and [@TheCleric](https://github.com/TheCleric) for keeping the lights on all this time._
+
+---
+
+This fork contains updated dependencies. See [DEPENDENCY_UPDATES.md](DEPENDENCY_UPDATES.md) for details. OpenAI Codex addressed vulnerabilities reported by `npm audit`. All Codex changes are documented in [CODEX_UPDATES.md](CODEX_UPDATES.md).
+
+This code should build and run in a modern environment. It has been tested lightly on Linux, but no guarantees are made for other platforms or full functionality.
+
+## Quick Start
+
+```bash
+git clone https://github.com/jbff/nativefier
+cd nativefier
+npm install
+npm run build
+```
+
+and
+
+```bash
+npm link
+```
+
+will but a nativefier binary in your npm global bin directory.
+
+and
+
+```bash
+node lib/cli.js
+```
+
+will let you run the CLI directly from the top level of the repo
+
+All content below is the latest README.md from the archived project at the time of forking and has not been updated, so may be out of date in some specifics, but should be correct when describing usage and functionality of the project.
+
+---
+
 Note: Nativefier is unmaintained, please see https://github.com/nativefier/nativefier/issues/1577.
 
 # Nativefier
