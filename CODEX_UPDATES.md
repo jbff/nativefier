@@ -3,7 +3,7 @@
  The following changes have been applied by OpenAI Codex since the last commit:
 
  ## Version Bump
- - Updated root `package.json` version from `52.0.0` to `52.0.1`.
+ - Updated root `package.json` version from `52.0.0` to `52.0.1` (then `52.0.2` to use electron 36.3.1 by default)
 
  ## Dependency Updates
  See [DEPENDENCY_UPDATES.md](DEPENDENCY_UPDATES.md) for full details on all dependency version bumps and shrinkwrap file updates.
