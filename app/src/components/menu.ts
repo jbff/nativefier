@@ -128,10 +128,7 @@ export function generateMenu(
       },
       {
         label: 'Clear App Data',
-        click: (
-          item: MenuItem,
-          focusedWindow: BrowserWindow | undefined,
-        ): void => {
+        click: (item, focusedWindow) => {
           log.debug('Clear App Data.click', {
             item,
             focusedWindow,
@@ -140,7 +137,7 @@ export function generateMenu(
           if (!focusedWindow) {
             focusedWindow = mainWindow;
           }
-          clearAppData(focusedWindow).catch((err) =>
+          clearAppData(focusedWindow as any).catch((err) =>
             log.error('clearAppData ERROR', err),
           );
         },
@@ -187,10 +184,7 @@ export function generateMenu(
         accelerator: isOSX() ? 'Ctrl+Cmd+F' : 'F11',
         enabled: mainWindow.isFullScreenable() || isOSX(),
         visible: mainWindow.isFullScreenable() || isOSX(),
-        click: (
-          item: MenuItem,
-          focusedWindow: BrowserWindow | undefined,
-        ): void => {
+        click: (item, focusedWindow) => {
           log.debug('Toggle Full Screen.click()', {
             item,
             focusedWindow,
@@ -256,12 +250,12 @@ export function generateMenu(
       {
         label: 'Toggle Developer Tools',
         accelerator: isOSX() ? 'Alt+Cmd+I' : 'Ctrl+Shift+I',
-        click: (item: MenuItem, focusedWindow: BrowserWindow | undefined) => {
+        click: (item, focusedWindow) => {
           log.debug('Toggle Developer Tools.click()', { item, focusedWindow });
           if (!focusedWindow) {
             focusedWindow = mainWindow;
           }
-          focusedWindow.webContents.toggleDevTools();
+          (focusedWindow as any).webContents.toggleDevTools();
         },
       },
     );

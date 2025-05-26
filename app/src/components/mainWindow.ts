@@ -189,7 +189,7 @@ function setupCloseEvent(options: OutputOptions, window: BrowserWindow): void {
         window.moveTabToNewWindow();
       }
       window.setFullScreen(false);
-      window.once('leave-full-screen', (event: Event) =>
+      (window as any).once('leave-full-screen', (event: Event) =>
         hideWindow(
           window,
           event,
